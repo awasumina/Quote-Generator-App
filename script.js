@@ -13,7 +13,6 @@ let currentIndex = 0;
 
 const categories = ['science', 'inspire', 'life', 'wisdom', 'success', 'happiness'];
 
-//display a quote
 const displayQuote = (index) => {
   if (quotesArray.length > 0 && index >= 0 && index < quotesArray.length) {
     quote.innerText = quotesArray[index].content;
@@ -21,7 +20,7 @@ const displayQuote = (index) => {
   }
 };
 
-// fetch quotes for the selected category
+// fetch quotes
 const getQuotes = (category) => {
   return fetch(`https://api.quotable.io/quotes?tags=${category}&limit=10`)
     .then((data) => data.json())
