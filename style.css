@@ -15,6 +15,7 @@ body {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  text-align: center; /* Centering content */
 }
 
 .container {
@@ -24,7 +25,6 @@ body {
   box-shadow: 0 20px 65px rgba(87, 11, 16, 0.5);
   position: relative;
   border-radius: 8px;
-  text-align: center;
 }
 
 .container:after {
@@ -54,9 +54,9 @@ body {
 .container button {
   background-color: #3a10c2;
   border: none;
-  padding: 15px 45px;
+  padding: 10px 20px;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #f8f8f8;
   cursor: pointer;
@@ -77,4 +77,17 @@ select {
 
 #next-btn {
   margin-left: 10px;
+}
+
+/* Style for Random button */
+#random-btn {
+  margin-top: 20px;
+  background-color: #ff6347; /* Change color for distinction */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
 }
