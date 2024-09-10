@@ -15,7 +15,7 @@ body {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  text-align: center; /* Centering content */
+  text-align: center; 
 }
 
 .container {
@@ -82,7 +82,7 @@ select {
 /* Style for Random button */
 #random-btn {
   margin-top: 20px;
-  background-color: #ff6347; /* Change color for distinction */
+  background-color: #ff6347; 
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
