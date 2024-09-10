@@ -13,23 +13,64 @@
   <body>
     <div class="wrapper">
       <div class="container">
-        <select id="category-select">
-          <option value="science">Science</option>
-          <option value="inspire">Inspiration</option>
-          <option value="life">Life</option>
-          <option value="wisdom">Wisdom</option>
-          <option value="success">Success</option>
-          <option value="happiness">Happiness</option>
-        </select>
+        <!-- Place all select elements in a row -->
+        <div class="select-row">
+          <div class="select-container">
+            <label for="category-select">Category:</label>
+            <select id="category-select">
+              <option value="science">Science</option>
+              <option value="inspire">Inspiration</option>
+              <option value="life">Life</option>
+              <option value="wisdom">Wisdom</option>
+              <option value="success">Success</option>
+              <option value="happiness">Happiness</option>
+            </select>
+          </div>
+
+          <div class="select-container">
+            <label for="font-select">Font Style:</label>
+            <select id="font-select">
+              <option value="'Poppins', sans-serif">Poppins</option>
+              <option value="'Arial', sans-serif">Arial</option>
+              <option value="'Times New Roman', serif">Times New Roman</option>
+              <option value="'Courier New', monospace">Courier New</option>
+              <option value="'Georgia', serif">Georgia</option>
+              <option value="'Verdana', sans-serif">Verdana</option>
+            </select>
+          </div>
+
+          <div class="select-container">
+            <label for="font-size-select">Font Size:</label>
+            <select id="font-size-select">
+              <option value="12px">12px</option>
+              <option value="14px">14px</option>
+              <option value="16px">16px</option>
+              <option value="18px">18px</option>
+              <option value="20px">20px</option>
+              <option value="24px">24px</option>
+              <option value="28px">28px</option>
+            </select>
+          </div>
+        </div>
+
         <p id="quote">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, magni.
         </p>
         <h3 id="author">Lorem, ipsum.</h3>
-        <button id="previous-btn">Previous</button>
-        <button id="next-btn">Next</button>
+        <div class="button-group">
+          <button id="previous-btn">Previous</button>
+          <button id="next-btn">Next</button>
+        </div>
       </div>
-      <!-- Move Random Button outside the container -->
-      <button id="random-btn">Random</button>
+
+      <div class="random-btn-container">
+        <button id="random-btn">Random</button>
+      </div>
+    </div>
+
+    <div class="theme-switch">
+      <label for="theme-toggle">Dark Mode:</label>
+      <input type="checkbox" id="theme-toggle" />
     </div>
 
     <script src="script.js"></script>

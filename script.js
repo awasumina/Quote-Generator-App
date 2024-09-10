@@ -4,14 +4,16 @@ let categorySelect = document.getElementById("category-select");
 let nextBtn = document.getElementById("next-btn");
 let previousBtn = document.getElementById("previous-btn");
 let randomBtn = document.getElementById("random-btn");
+let themeToggle = document.getElementById("theme-toggle");
+let fontSelect = document.getElementById('font-select');
+let fontSizeSelect = document.getElementById('font-size-select');
 
 let quotesArray = [];
 let currentIndex = 0;
 
-
 const categories = ['science', 'inspire', 'life', 'wisdom', 'success', 'happiness'];
 
-// display a quote
+//display a quote
 const displayQuote = (index) => {
   if (quotesArray.length > 0 && index >= 0 && index < quotesArray.length) {
     quote.innerText = quotesArray[index].content;
@@ -19,11 +21,11 @@ const displayQuote = (index) => {
   }
 };
 
-// Fetch quotes for the selected category
+// fetch quotes for the selected category
 const getQuotes = (category) => {
   return fetch(`https://api.quotable.io/quotes?tags=${category}&limit=10`)
     .then((data) => data.json())
-    .then((response) => response.results); // Return the quotes array
+    .then((response) => response.results); 
 };
 
 const updateQuotesForCategory = async (category) => {
@@ -42,7 +44,6 @@ const fetchAllCategories = async () => {
   return allQuotes;
 };
 
-
 nextBtn.addEventListener("click", () => {
   if (currentIndex < quotesArray.length - 1) {
     currentIndex++;
@@ -59,7 +60,7 @@ previousBtn.addEventListener("click", () => {
 
 randomBtn.addEventListener("click", async () => {
   let allQuotes = await fetchAllCategories(); 
-  let randomIndex = Math.floor(Math.random() * allQuotes.length);
+  let randomIndex = Math.floor(Math.random() * allQuotes.length); 
   quote.innerText = allQuotes[randomIndex].content;
   author.innerText = allQuotes[randomIndex].author;
 
@@ -69,8 +70,25 @@ randomBtn.addEventListener("click", async () => {
   updateQuotesForCategory(randomCategory);
 });
 
+themeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+  document.querySelector(".container").classList.toggle("dark-mode");
+});
+
 window.addEventListener("load", async () => {
   let defaultCategory = categorySelect.value;
   await updateQuotesForCategory(defaultCategory); 
-  displayQuote(0);
+  displayQuote(0); 
+});
+
+fontSelect.addEventListener('change', function() {
+  const selectedFont = fontSelect.value;
+  quote.style.fontFamily = selectedFont;
+  author.style.fontFamily = selectedFont;
+});
+
+fontSizeSelect.addEventListener('change', function() {
+  const selectedFontSize = fontSizeSelect.value;
+  quote.style.fontSize = selectedFontSize;
+  author.style.fontSize = selectedFontSize;
 });
