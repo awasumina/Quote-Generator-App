@@ -20,7 +20,7 @@ const displayQuote = (index) => {
   }
 };
 
-// fetch quotes
+// fetch quotes 
 const getQuotes = (category) => {
   return fetch(`https://api.quotable.io/quotes?tags=${category}&limit=10`)
     .then((data) => data.json())
@@ -59,8 +59,7 @@ previousBtn.addEventListener("click", () => {
 
 randomBtn.addEventListener("click", async () => {
   let allQuotes = await fetchAllCategories(); 
-  let randomIndex = Math.floor(Math.random() * allQuotes.length); 
-  quote.innerText = allQuotes[randomIndex].content;
+  let randomIndex = Math.floor(Math.random() * allQuotes.length);   quote.innerText = allQuotes[randomIndex].content;
   author.innerText = allQuotes[randomIndex].author;
 
   let randomCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -69,6 +68,7 @@ randomBtn.addEventListener("click", async () => {
   updateQuotesForCategory(randomCategory);
 });
 
+// Toggle dark mode
 themeToggle.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode");
   document.querySelector(".container").classList.toggle("dark-mode");
@@ -80,6 +80,7 @@ window.addEventListener("load", async () => {
   displayQuote(0); 
 });
 
+// Font style change event listener
 fontSelect.addEventListener('change', function() {
   const selectedFont = fontSelect.value;
   quote.style.fontFamily = selectedFont;

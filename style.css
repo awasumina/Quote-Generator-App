@@ -1,3 +1,4 @@
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ body {
   transition: background-color 0.3s;
 }
 
+/* Wrapper and Container Styling */
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -32,6 +34,7 @@ body {
   text-align: center;
 }
 
+/* Adding a shadow for container */
 .container:after {
   content: "";
   position: absolute;
@@ -44,6 +47,7 @@ body {
   transition: background-color 0.3s;
 }
 
+/* Text Styling */
 #quote {
   color: #000;
   font-size: 18px;
@@ -59,6 +63,7 @@ body {
   text-transform: capitalize;
 }
 
+/* Select Dropdown Styling */
 .select-row {
   display: flex;
   justify-content: space-between;
@@ -89,6 +94,7 @@ select {
   margin-bottom: 20px;
 }
 
+/* Button Styling */
 .button-group,
 .random-btn-container {
   display: flex;
@@ -97,7 +103,7 @@ select {
 
 button {
   padding: 10px 20px;
-  border: none;
+  border: 2px solid #007bff; /* Adding border to button */
   border-radius: 5px;
   background-color: #007bff;
   color: white;
@@ -132,19 +138,21 @@ body.dark-mode {
 .container.dark-mode h3,
 .dark-mode #quote,
 .dark-mode #author {
-  color: #cbedf7; 
+  color: #ffffff; /* Ensures text is white in dark mode */
 }
 
 .dark-mode select,
 .dark-mode button {
   background-color: #444;
-  color: #f8f8f8;
-  border: 2px solid #625f5f; 
+  color: #ffffff;
+  border: 2px solid #686666; /* White border around select and button */
 }
 
 .dark-mode button:hover {
-  background-color: #3b536f; 
+  background-color: #555;
 }
+
+
 
 
 /* Theme Switch */
@@ -166,13 +174,15 @@ body.dark-mode {
   font-size: 16px;
 }
 
+
+
 #theme-toggle {
   appearance: none;
   background-color: #d1d1d1;
   border: 2px solid #ccc;
   border-radius: 25px;
-  width: 60px;
-  height: 30px;
+  width: 30px; /* Reduced width */
+  height: 15px; /* Reduced height */
   position: relative;
   cursor: pointer;
   outline: none;
@@ -186,15 +196,70 @@ body.dark-mode {
 #theme-toggle:before {
   content: '';
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 24px;
-  height: 24px;
+  top: 2px; /* Adjusted for better alignment */
+  left: 2px; /* Adjusted for better alignment */
+  width: 12px; /* Reduced size */
+  height: 12px; /* Reduced size */
   border-radius: 50%;
   background-color: #ffffff;
   transition: transform 0.3s;
 }
 
 #theme-toggle:checked:before {
-  transform: translateX(30px);
+  transform: translateX(15px); /* Adjusted for new width */
 }
+
+.theme-switch {
+  padding: 6px; /* Reduced padding */
+}
+
+.theme-switch label {
+  margin-right: 6px; /* Reduced margin */
+  font-size: 12px; /* Decreased font size */
+}
+
+
+
+@media (max-width: 480px) {
+  #quote {
+    font-size: 14px;
+  }
+
+  #author {
+    font-size: 10px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  #theme-toggle {
+    width: 20px; /* Adjusted width for smaller screens */
+    height: 10px; /* Adjusted height for smaller screens */
+  }
+
+  #theme-toggle:before {
+    width: 8px; /* Adjusted size for smaller screens */
+    height: 8px; /* Adjusted size for smaller screens */
+  }
+
+  .theme-switch {
+    padding: 2px; /* Further reduced padding for smaller screens */
+  }
+
+  .theme-switch label {
+    font-size: 8px; /* Further reduced font size for smaller screens */
+  }
+
+  select {
+    font-size: 10px; /* Decreased font size for select elements on smaller screens */
+    padding: 8px; /* Adjusted padding for select elements on smaller screens */
+  }
+
+  option {
+    font-size: 12px; /* Decreased font size for options within select elements */
+  }
+}
+
+
